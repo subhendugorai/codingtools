@@ -1,0 +1,10 @@
+public static int findComplement(int num){
+	int count=0;
+	int a=num;
+	while(num!=0) {
+			num>>=1;
+			count++;
+		}
+	int xor=(1<<count)-1;
+	return xor^a;
+    }
