@@ -1,0 +1,9 @@
+class Solution{
+    
+    public static Boolean solve(int n,int k)
+    {
+        int mask=1;
+	    mask=mask<<k;
+		return ((n&mask)==0)?false:true;	
+    }
+}
