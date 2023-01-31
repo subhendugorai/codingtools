@@ -1,0 +1,7 @@
+class Solution {
+    public int setKBit(int n, int k) {
+        int mask=1;     
+		    mask<<=k;   //set the mask at kth position.
+		    return (n|mask);
+    }
+}
