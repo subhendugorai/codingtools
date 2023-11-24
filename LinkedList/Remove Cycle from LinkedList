@@ -1,0 +1,32 @@
+/*  1.first check if there is loop exist or not. this can be done.
+    2 take slow & fast pointer (as we use in case of mid finding). if they meet at same  point then loop exist. otherwise not.
+    3.if exist take slow to head and run both one time .they will meet again that will be the looping point.(handle the edge case if they meet a head).
+public static void removeLoop(Node head){  //This is remove cycle from linkedlist problem.
+        Node fast=head;
+        Node slow=head;
+        boolean isCycle=false;
+        while(fast!=null && fast.next!=null){
+            fast=fast.next.next;
+            slow=slow.next;
+            if(slow==fast){
+                isCycle=true;
+                break;
+            }
+        }
+        if(isCycle==false){
+            return;
+        }
+        slow=head;
+        if(slow!=fast) {   //if they not meet at head.
+            while(slow.next!=fast.next){
+                slow=slow.next;
+                fast=fast.next; 
+            }
+            fast.next=null;
+        }else {   //if both meet at head then head itself creating the loop.
+            while(fast.next!=slow){
+                fast=fast.next;
+            }
+            fast.next=null;
+        }      
+    }
